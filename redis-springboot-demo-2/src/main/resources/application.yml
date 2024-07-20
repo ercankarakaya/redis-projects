@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: redis-demo
+
+## Database Config ##
+  datasource:
+    url: jdbc:postgresql://localhost:5432/countries
+    username: postgres
+    password:
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        show_sql: false
+
+ ## Redis & Cache Config ##
+  cache:
+    type: redis
+  redis:
+    host: localhost
+    port: 6379
+
+cache:
+  config:
+    entryTtl: 60
+    countryNames:
+      entryTtl: 30
+
+
+
+
+
